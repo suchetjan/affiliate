@@ -1,17 +1,15 @@
 {
   "version": 2,
-  "buildCommand": "cd ../.. && npm install && npm run build --workspace=apps/api",
-  "installCommand": "cd ../.. && npm install",
   "builds": [
     {
-      "src": "dist/main.js",
+      "src": "api/index.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/main.js"
+      "dest": "api/index.ts"
     }
   ]
 }
